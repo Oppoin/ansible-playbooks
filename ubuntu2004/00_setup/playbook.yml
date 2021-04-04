@@ -69,6 +69,10 @@
     - name: Install required system packages
       apt: name={{ sys_packages }} state=latest
 
+    # Safe upgrade
+    - name: Safe upgrade
+      apt: upgrade=safe
+
     # UFW Setup
     - name: UFW - Allow SSH connections
       ufw:
